@@ -161,7 +161,7 @@ void sendDataBME() {
 
   //Format message to influx-format
   char msg[MSG_BUFFER_SIZE]; //Message to send to Broker
-  snprintf(msg, MSG_BUFFER_SIZE, "{\"ts\":%llu, \"values\":{\"temperature\":%.2f,\"relative_humidity"":%.2f,\"atmospheric_pressure\":%.2f}}", tsMicros, temperature, humidity, pressure);
+  snprintf(msg, MSG_BUFFER_SIZE, "{ts:%llu, values:{temperature:%.2f,relative_humidity"":%.2f,atmospheric_pressure:%.2f}}", tsMicros, temperature, humidity, pressure);
   Serial.print("Publish message: ");
   Serial.println(msg);
 
